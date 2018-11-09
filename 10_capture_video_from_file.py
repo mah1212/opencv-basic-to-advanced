@@ -6,6 +6,39 @@ Created on Fri Nov  9 18:37:24 2018
 """
 
 
+# =============================================================================
+# Playing Video from file
+# 
+# It is same as capturing from Camera, just change camera index with video file name. 
+# Also while displaying the frame, use appropriate time for cv2.waitKey(). If it is 
+# too less, video will be very fast and if it is too high, video will be slow (Well, 
+# that is how you can display videos in slow motion). 25 milliseconds will be OK in normal cases.
+# 
+# =============================================================================
+
+
+import cv2
+
+cap = cv2.VideoCapture('test2.mp4')
+
+while(cap.isOpened()):
+    ret, frame = cap.read()
+
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    cv2.imshow('frame',gray)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+
+"""
+Note: 
+
+Make sure proper versions of ffmpeg or gstreamer is installed. Sometimes, it is 
+a headache to work with Video Capture mostly due to wrong installation of ffmpeg/gstreamer. 
+"""
 
 # =============================================================================
 # Capture Video from Camera
