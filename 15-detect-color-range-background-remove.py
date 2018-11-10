@@ -8,6 +8,7 @@ Created on Fri Nov  9 17:15:18 2018
 
 
 import cv2
+# import numpy as np
 
 ## Read
 img = cv2.imread("sunflower.jpg")
@@ -17,6 +18,8 @@ hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
 ## mask of green (36,0,0) ~ (70, 255,255)
 mask1 = cv2.inRange(hsv, (36, 0, 0), (70, 255,255))
+
+# mask1 = np.zeros_like(mask1)
 
 ## mask o yellow (15,0,0) ~ (36, 255, 255)
 mask2 = cv2.inRange(hsv, (15,0,0), (36, 255, 255))
