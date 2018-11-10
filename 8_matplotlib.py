@@ -31,15 +31,19 @@ TypeError: Image data cannot be converted to float
 import cv2
 import matplotlib.pyplot as plt
 
-img = cv2.imread('abs1.jpg', 0)
+img = cv2.imread('abs1.jpg')
 
 
-plt.imshow(img, cmap = 'gray', interpolation = 'bicubic')
+plt.imshow(img)
 plt.xticks([])
 plt.yticks([])  # to hide tick values on X and Y axis
 plt.show()
 
 
+bgr_to_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+plt.imshow(bgr_to_rgb)
+plt.show()
 
 # =============================================================================
 # 
