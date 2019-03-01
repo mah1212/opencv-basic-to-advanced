@@ -1,5 +1,10 @@
 # https://docs.opencv.org/4.0.1/da/df5/tutorial_py_sift_intro.html
 # SIFT is slow, so SURF introduced.  
+# In short, SURF adds a lot of features to improve the speed in every step. 
+# Analysis shows it is 3 times faster than SIFT while performance is comparable to SIFT. 
+# SURF is good at handling images with blurring and rotation, but not good at 
+# handling viewpoint change and illumination change.
+
 """Incomplete"""
 import numpy as np
 import cv2 as cv
