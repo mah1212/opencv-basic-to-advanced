@@ -1,2 +1,2 @@
 # opencv-basic-to-advanced
-OpenCV basic to advanced practice repo
+Practice: OpenCV basic to advanced practice repo
